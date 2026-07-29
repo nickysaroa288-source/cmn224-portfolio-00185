@@ -12,4 +12,4 @@ This repository contains my CMN224 portfolio work.
 Nicky Saroa
 
 ## Purpose
-This repository is used to store and submit course work for CMN224.
+This repository is used to store and submit course work for CMN224 Software Engineering.
