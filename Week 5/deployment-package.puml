@@ -1,0 +1,42 @@
+@startuml
+
+package "User Interface" {
+    [Student Registration Form]
+    [Attendance Form]
+    [Fee Payment Form]
+    [Report Dashboard]
+}
+
+package "Application Logic" {
+    [Student Service]
+    [Attendance Service]
+    [Fee Service]
+    [Report Service]
+}
+
+package "Data Access" {
+    [Repository Layer]
+}
+
+package "Synchronization" {
+    [Sync Service]
+}
+
+package "Data Storage" {
+    database "Local SQLite Database"
+}
+
+[Student Registration Form] --> [Student Service]
+[Attendance Form] --> [Attendance Service]
+[Fee Payment Form] --> [Fee Service]
+[Report Dashboard] --> [Report Service]
+
+[Student Service] --> [Repository Layer]
+[Attendance Service] --> [Repository Layer]
+[Fee Service] --> [Repository Layer]
+[Report Service] --> [Repository Layer]
+
+[Repository Layer] --> "Local SQLite Database"
+[Repository Layer] --> [Sync Service]
+
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+
+node "School Office PC" {
+    [School Management System]
+    database "Local SQLite Database"
+}
+
+node "Head Teacher Laptop" {
+    [Reporting Module]
+}
+
+node "Mobile Phone (4G Hotspot)" {
+    [Internet Connection]
+}
+
+node "Central Education Server" {
+    [Synchronization Service]
+    database "Master Database"
+}
+
+[School Management System] --> "Local SQLite Database"
+
+"School Office PC" --> "Head Teacher Laptop" :
+Local Network (available during school hours)
+
+"Head Teacher Laptop" --> "Printer" :
+USB/Wi-Fi (when needed)
+
+"School Office PC" ..> "Mobile Phone (4G Hotspot)" :
+4G Connection
+
+"Mobile Phone (4G Hotspot)" ..> "Central Education Server" :
+Sync Daily when internet available
+
+note right of "School Office PC"
+
+When internet link is DOWN:
+
+✓ Student registration works
+✓ Attendance recording works
+✓ Fee payment recording works
+✓ Viewing student records works
+✓ Local report generation works
+
+Data remains stored in the
+Local SQLite Database and
+synchronizes later when
+connectivity returns.
+
+end note
+
+@enduml
