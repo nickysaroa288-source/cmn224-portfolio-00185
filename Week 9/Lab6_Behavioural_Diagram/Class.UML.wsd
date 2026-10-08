@@ -1,0 +1,69 @@
+@startuml
+
+class User {
+  +userID : int
+  +name : String
+  +email : String
+  +password : String
+  +login()
+  +logout()
+}
+
+class Student {
+  +studentID : int
+  +grade : String
+  +attendance : float
+  +viewResults()
+}
+
+class Parent {
+  +parentID : int
+  +contactNo : String
+  +viewProgress()
+  +payFees()
+}
+
+class Teacher {
+  +teacherID : int
+  +subject : String
+  +recordAttendance()
+  +enterMarks()
+}
+
+class Administrator {
+  +adminID : int
+  +registerStudent()
+  +manageRecords()
+}
+
+class Bursar {
+  +bursarID : int
+  +manageFees()
+  +recordPayment()
+}
+
+class HeadTeacher {
+  +headID : int
+  +approveReports()
+  +manageUsers()
+}
+
+class FeePayment {
+  +paymentID : int
+  +amount : double
+  +date : Date
+  +generateReceipt()
+}
+
+User <|-- Student
+User <|-- Parent
+User <|-- Teacher
+User <|-- Administrator
+User <|-- Bursar
+User <|-- HeadTeacher
+
+Parent "1" -- "*" Student : responsible for
+Teacher "1" -- "*" Student : teaches
+Student "1" -- "*" FeePayment : makes
+
+@enduml

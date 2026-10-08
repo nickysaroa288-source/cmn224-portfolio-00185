@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+
+actor "Head Teacher" as HT
+actor Bursar
+actor Teacher
+actor Administrator
+actor Parent
+actor Student
+
+rectangle "Kina Ridge Primary School Management System" {
+
+  usecase "View Student Progress" as UC1
+  usecase "Pay School Fees" as UC2
+  usecase "View Fee Balance" as UC3
+
+  usecase "View Results" as UC4
+  usecase "View Timetable" as UC5
+  usecase "View Attendance" as UC6
+
+  usecase "Record Attendance" as UC7
+  usecase "Enter Student Marks" as UC8
+  usecase "Generate Academic Reports" as UC9
+
+  usecase "Register Students" as UC10
+  usecase "Manage Student Records" as UC11
+  usecase "Manage Staff Records" as UC12
+
+  usecase "Manage School Fees" as UC13
+  usecase "Record Payments" as UC14
+  usecase "Generate Financial Reports" as UC15
+
+  usecase "Approve Reports" as UC16
+  usecase "Manage Users" as UC17
+  usecase "View School Reports" as UC18
+}
+
+Parent --> UC1
+Parent --> UC2
+Parent --> UC3
+
+Student --> UC4
+Student --> UC5
+Student --> UC6
+
+Teacher --> UC7
+Teacher --> UC8
+Teacher --> UC9
+
+Administrator --> UC10
+Administrator --> UC11
+Administrator --> UC12
+
+Bursar --> UC13
+Bursar --> UC14
+Bursar --> UC15
+
+HT --> UC16
+HT --> UC17
+HT --> UC18
+
+@enduml

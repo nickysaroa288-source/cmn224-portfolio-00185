@@ -1,0 +1,28 @@
+@startuml
+
+[*] --> Registered
+
+state Registered
+state Active
+state FeeOverdue
+state Suspended
+state Graduated
+state Archived
+
+Registered --> Active : Student Enrolled
+
+Active --> FeeOverdue : Fees Unpaid
+
+FeeOverdue --> Active : Fees Settled
+
+Active --> Suspended : Disciplinary Action
+
+Suspended --> Active : Reinstated
+
+Active --> Graduated : Completed Primary School
+
+Graduated --> Archived : Student Record Archived
+
+Archived --> [*]
+
+@enduml

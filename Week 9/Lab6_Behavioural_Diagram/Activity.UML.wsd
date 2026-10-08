@@ -1,0 +1,29 @@
+@startuml
+
+start
+
+:Parent Login;
+
+:View Outstanding Fees;
+
+:Make Payment;
+
+if (Payment Valid?) then (Yes)
+
+:Record Payment;
+
+:Update Student Account;
+
+:Generate Receipt;
+
+stop
+
+else (No)
+
+:Display Error Message;
+
+stop
+
+endif
+
+@enduml
